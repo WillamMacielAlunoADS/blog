@@ -6,14 +6,14 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
 </head>
 <body>
-	<div>
-		<h1>Blog</h1>
+	<div class="titulo">
+		<h1>Blog Aleatório</h1>
 	</div>
 	{% for post in posts %}
-	<div>
-		<p>publicado em: {{ post.published_date }} </p>
-		<h1> {{ post.title }} </h1>
-		<p> {{ post.text|linebreaksbr }} </p>
+	<div class="POST">
+		<p class="data">publicado em: {{ post.published_date }} </p>
+		<h2> {{ post.title }} </h1>
+	    <p class="texto"> {{ post.text|linebreaksbr }} </p>
 	</div>
 	{% endfor %}
 </body>

@@ -26,6 +26,7 @@ SECRET_KEY = 'tgm@qq=dqhjx7^e1^s+(by+mhma73_!dd6pheg3jr-k)!l)64a'
 DEBUG = True
 
 ALLOWED_HOSTS = ['william000123321.pythonanywhere.com']
+#ALLOWED_HOSTS = []
 
 # Application definition
 

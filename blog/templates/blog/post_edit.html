@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+
+{% block dinamico %}
+	<h1>Nova Postagem</h1>
+	<form method="POST" class="post-form">{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit">Save</button>
+	</form>
+{% endblock %}

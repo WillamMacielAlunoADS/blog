@@ -7,9 +7,12 @@
 </head>
 <body>
 	<div class="titulo">
-		<h1>Blog Aleatório</h1>
+	<a href="{% url 'post_list' %}"><h1>Blog Aleatório</h1></a>
+	{% if user.is_authenticated %}
+		<a href="{% url 'post_new' %}">Novo Post</a>
+	{% endif %}
 	</div>
-	<a href="{% url 'post_new' %}">Novo Post</a>
+	
 	{% block dinamico %}
 
 	{% endblock %}

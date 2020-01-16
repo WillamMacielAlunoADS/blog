@@ -3,7 +3,6 @@
 {% block dinamico %}
 	{% for post in posts %}
 	<div class="POST">
-		<a href="{% url 'post_new' %}">Novo Post</a>
 		<p class="data">publicado em: {{ post.published_date }} </p>
 		<h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
 	    <p class="texto"> {{ post.text|linebreaksbr }} </p>

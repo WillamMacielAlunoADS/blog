@@ -1,9 +1,14 @@
 {% extends 'blog/base.html' %}
 
 {% block dinamico %}
+{% if user.is_authenticated %}
 	<h1>Nova Postagem</h1>
 	<form method="POST" class="post-form">{% csrf_token %}
 		{{ form.as_p }}
 		<button type="submit">Save</button>
 	</form>
+{% else %}
+	<h2>Área Restríta!! Somente usuários logádos</h2>
+{% endif %}
+
 {% endblock %}

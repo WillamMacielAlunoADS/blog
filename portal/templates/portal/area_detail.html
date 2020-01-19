@@ -1,0 +1,15 @@
+{% extends 'portal/base.html' %}
+
+{% block dinamico %}
+	<div class='POST'>
+	<h2>{{ area.descricao }}</h2>
+	<p class="texto">{{ area.cor }}</p>
+	<p class="texto">{{ area.status }}</p>
+	{% if user.is_authenticated %}
+	<a href="{% url 'area_edit' pk=area.pk %}">Editar Área</a><br>
+	<a href="{% url 'area_remove' pk=area.pk %}" onclick="return confirm('Deseja deletar?')">Deletar Área</a>
+	<a href="{% url 'ativar' pk=area.pk %}"><button>Ativar</button></a>
+	<a href="{% url 'desativar' pk=area.pk %}"><button>Desativar</button></a>
+	{% endif %}
+	</div>
+{% endblock %}

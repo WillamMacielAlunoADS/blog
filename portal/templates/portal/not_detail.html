@@ -1,0 +1,21 @@
+{% extends 'portal/base.html' %}
+
+{% block dinamico %}
+	<br>
+	<div class="POST">
+
+	{% if noti.photo %}
+	<img class="img" src="{{noti.photo.url}}" alt="..."/>
+	{% endif %}
+	<p class="data">publicado em: {{ noti.published_date }} </p>
+	<h2>{{ noti.title }}</h2>
+	<h3>{{ noti.area }}</h3>
+	<p class="texto">{{ noti.text|linebreaksbr }}</p>
+	{% if user.is_authenticated %}
+<a href="{% url 'not_remove' pk=noti.pk %} " onclick="return confirm('Deseja deletar notícia?')"><button>Deletar</button></a>
+
+<a href="{% url 'publicar' pk=noti.pk %}"><button>Publicar</button></a>
+		{% endif %}
+	</div>
+
+{% endblock %}

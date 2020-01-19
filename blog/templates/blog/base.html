@@ -7,7 +7,9 @@
 </head>
 <body>
 	<div class="titulo">
-	<a href="{% url 'post_list' %}"><h1>Blog Aleatório</h1></a>
+	<center><h1>Blog Aleatório</h1></center>
+	<img src="{% static 'imagens/logo.jpg' %}"><br>
+	<a href="{% url 'post_list' %}">Home</a><br>
 	{% if user.is_authenticated %}
 	<a href="{% url 'post_new' %}"><button>Novo Post</button></a>
 	{% endif %}

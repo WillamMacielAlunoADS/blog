@@ -1,0 +1,23 @@
+{% extends 'portal/base.html' %}
+
+
+{% block dinamico %}
+
+	{% for area in areas %}
+		{% if area.status %}
+		<div class="fora">
+			<div class="visitante" >
+			<h2 style="color: {{ area.cor }};">{{ area.descricao }}</h2>
+			{% for noti in nots %}
+			{% if noti.area.pk == area.pk %}
+			{% if noti.published_date %}
+			<h3><a style="color: {{ area.cor }};" href="{% url 'not_detail' pk=noti.pk %}">{{ noti.title }}</a></h3>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+			</div>
+		</div>
+		{% endif %}
+	{% endfor %}
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}

@@ -1,22 +1,76 @@
-<!DOCTYPE html>
-{% load staticfiles %}
+{% load static %}
 <html>
-<head>
-	<title>My Blog</title>
-	<link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
-</head>
-<body>
-	<div class="titulo">
-	<center><h1>Blog Aleatório</h1></center>
-	<img src="{% static 'imagens/logo.jpg' %}"><br>
-	<a href="{% url 'post_list' %}">Home</a><br>
-	{% if user.is_authenticated %}
-	<a href="{% url 'post_new' %}"><button>Novo Post</button></a>
-	{% endif %}
-	</div>
-	
-	{% block dinamico %}
+    <head>
+        <title>Blog Django Girls</title>
+        <style type="text/css">
+            h1 a, h2 a {
+                color: #C25100;
+                padding-left: 15px;
+                font-family: 'Lobster';
+            }
+            p{
+                padding-left: 15px;   
+            }
+            .page-header {
+    background-color: #C25100;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
 
-	{% endblock %}
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+.content {
+    margin-left: 40px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Lobster', cursive;
+}
+
+.date {
+    color: #828282;
+}
+
+.save {
+    float: right;
+}
+
+.post-form textarea, .post-form input {
+    width: 100%;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+
+.post {
+    margin-bottom: 70px;
+}
+
+.post h2 a, .post h2 a:visited {
+    color: #000000;
+}
+        </style>
+    </head>
+    <body>
+    <div class="page-header">
+        <a href="{% url 'post_new' %}" class="top-menu">Novo Post</a>
+        <h1><a href="/">Django Girls Blog</a></h1>
+    </div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+            </div>
+        </div>
+    </div>
 </body>
 </html>

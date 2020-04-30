@@ -1,0 +1,17 @@
+python -m venv myvenv
+myvenv\Scripts\activate
+- Criar documento requirements.txt e em seguida executar o comando abaixo
+pip install -r requirements.txt
+django-admin.exe startproject mysite .
+- Configure mysite/settings.py em seguida faça o comando abaixo
+python manage.py migrate
+python manage.py runserver
+python manage.py startapp blog
+- Depois de criar uma aplicação, mysite/settings.py, INSTALLED_APPS e adicionar uma linha com 'blog',
+- criar modelo de postagem blog/models.py (As Classes)
+python manage.py makemigrations blog
+python manage.py migrate blog
+- abrir o arquivo blog/admin.py no editor de código e substituir o conteúdo
+python manage.py createsuperuser
+- O seu arquivo mysite/urls.py
+- Crie um novo arquivo vazio chamado urls.py no diretório blog
